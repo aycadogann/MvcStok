@@ -23,6 +23,18 @@ namespace MvcStok.Controllers
             return View(kategoriler);
         }
 
+        [HttpGet]
+        public ActionResult YeniKategoriEkle()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult YeniKategoriEkle(Kategoriler kategori)
+        {
+            db.Kategoriler.Add(kategori);
+            db.SaveChanges();
+            return View();
+        }
     }
 }
