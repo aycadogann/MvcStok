@@ -22,5 +22,7 @@ namespace MvcStok.Controllers
             var kategoriler = db.Kategoriler.ToList();
             return View(kategoriler);
         }
+
+
     }
 }

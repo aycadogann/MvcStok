@@ -10,6 +10,8 @@
         <th>MÜŞTERİ ID</th>
         <th>MÜŞTERİ ADI</th>
         <th>MÜŞTERİ SOYADI</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
     </tr>
 
     <tbody>
@@ -20,9 +22,12 @@
                 <td>@musteri.MusteriId</td>
                 <td>@musteri.MusteriAd</td>
                 <td>@musteri.MusteriSoyad</td>
+                <td><a href="/Musteri/Sil/@musteri.MusteriId" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Musteri/Guncelle/@musteri.MusteriId" class="btn btn-success">GÜNCELLE</a></td>
             </tr>
         }
 
     </tbody>
 </table>
+<a href="/Musteri/YeniMusteriEkle/" class="btn btn-primary">YENİ MÜŞTERİ EKLE</a> 
 

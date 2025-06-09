@@ -14,6 +14,8 @@
         <th>KATEGORİ</th>
         <th>FİYAT</th>
         <th>STOK</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
     </tr>
 
     <tbody>
@@ -26,9 +28,11 @@
                     <td>@urun.UrunKategori</td>
                     <td>@urun.UrunFiyat</td>
                     <td>@urun.Stok</td>
+                    <td><a href="/Urun/Sil/@urun.UrunId" class="btn btn-danger">SİL</a></td>
+                    <td><a href="/Urun/Guncelle/@urun.UrunId" class="btn btn-success">GÜNCELLE</a></td>
                 </tr>
             }
     </tbody>
-
 </table>
+<a href="/Urun/YeniUrunEkle" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
 
