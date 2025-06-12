@@ -19,13 +19,13 @@ namespace MvcStok.Controllers
         }
 
         [HttpGet]
-        public ActionResult YeniMusteri()
+        public ActionResult YeniMusteriEkle()
         {
             return View();
         }
 
         [HttpPost]
-        public ActionResult YeniMusteri(Musteriler musteri)
+        public ActionResult YeniMusteriEkle(Musteriler musteri)
         {
             db.Musteriler.Add(musteri);
             db.SaveChanges();
