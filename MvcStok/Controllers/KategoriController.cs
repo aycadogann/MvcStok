@@ -43,5 +43,18 @@ namespace MvcStok.Controllers
             db.SaveChanges();
             return RedirectToAction("KategoriListele");
         }
+        public ActionResult KategoriGetir(int id)
+        {
+            var kategori = db.Kategoriler.Find(id);
+            return View("KategoriGetir", kategori);
+        }
+
+        public ActionResult Guncelle(Kategoriler k)
+        {
+            var kategori = db.Kategoriler.Find(k.KategoriId);
+            kategori.KategoriAd = k.KategoriAd;
+            db.SaveChanges();
+            return RedirectToAction("KategoriListele");
+        }
     }
 }
