@@ -32,6 +32,10 @@ namespace MvcStok.Controllers
         [HttpPost]
         public ActionResult YeniKategoriEkle(Kategoriler kategori)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("YeniKategoriEkle");
+            }
             db.Kategoriler.Add(kategori);
             db.SaveChanges();
             return View();
