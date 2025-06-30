@@ -6,33 +6,40 @@
     Layout = "~/Views/Shared/_MainLayout.cshtml";
 }
 
-<table class="table table-bordered">
-    <tr>
-        <th>ÜRÜN ID</th>
-        <th>ÜRÜN ADI</th>
-        <th>MARKASI</th>
-        <th>KATEGORİ</th>
-        <th>FİYAT</th>
-        <th>STOK</th>
-        <th>SİL</th>
-        <th>GÜNCELLE</th>
-    </tr>
 
+<table id="tblUrun" class="table table-bordered">
+    <thead>
+        <tr>
+            <th>ÜRÜN ID</th>
+            <th>ÜRÜN ADI</th>
+            <th>MARKASI</th>
+            <th>KATEGORİ</th>
+            <th>FİYAT</th>
+            <th>STOK</th>
+            <th>SİL</th>
+            <th>GÜNCELLE</th>
+        </tr>
+    </thead>
     <tbody>
-        @foreach(var urun in Model)
-            {
-                <tr>
-                    <td>@urun.UrunId</td>
-                    <td>@urun.UrunAd</td>
-                    <td>@urun.Marka</td>
-                    <td>@urun.Kategoriler.KategoriAd</td>
-                    <td>@urun.UrunFiyat</td>
-                    <td>@urun.Stok</td>
-                    <td><a href="/Urun/Sil/@urun.UrunId" class="btn btn-danger">SİL</a></td>
-                    <td><a href="/Urun/UrunGetir/@urun.UrunId" class="btn btn-success">GÜNCELLE</a></td>
-                </tr>
-            }
+        @foreach (var urun in Model)
+        {
+            <tr>
+                <td>@urun.UrunId</td>
+                <td>@urun.UrunAd</td>
+                <td>@urun.Marka</td>
+                <td>@urun.Kategoriler.KategoriAd</td>
+                <td>@urun.UrunFiyat</td>
+                <td>@urun.Stok</td>
+                <td><a href="/Urun/Sil/@urun.UrunId" class="btn btn-danger">SİL</a></td>
+                <td><a href="/Urun/UrunGetir/@urun.UrunId" class="btn btn-success">GÜNCELLE</a></td>
+            </tr>
+        }
     </tbody>
 </table>
 <a href="/Urun/YeniUrunEkle" class="btn btn-primary">YENİ ÜRÜN EKLE</a>
 
+<script type="text/javascript" src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+<link href="~/Content/DataTables/css/dataTables.bootstrap4.css" rel="stylesheet" />
+<script>
+    $('#tblUrun').DataTable();
+</script>
