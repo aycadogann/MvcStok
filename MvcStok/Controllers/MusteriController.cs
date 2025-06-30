@@ -12,10 +12,16 @@ namespace MvcStok.Controllers
     {
         // GET: Musteri
         MVCDbStokEntities db = new MVCDbStokEntities();
-        public ActionResult MusteriListele()
+        public ActionResult MusteriListele(string p)
         {
-            var musteri=db.Musteriler.ToList();
-            return View(musteri);
+            //var musteri=db.Musteriler.ToList();
+            //return View(musteri);
+            var degerler= from d in db.Musteriler select d;
+            if (!string.IsNullOrEmpty(p))
+            {
+                degerler = degerler.Where(m => m.MusteriAd.Contains(p));
+            }
+            return View(degerler.ToList());
         }
 
         [HttpGet]
